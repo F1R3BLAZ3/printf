@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	int counter;
 
 	va_list args;
+
 	va_start(args, format);
 
 	counter = 0;
@@ -66,6 +67,7 @@ int _printf(const char *format, ...)
 
 			{
 				int decimal = va_arg(args, int);
+
 				putchar(decimal);
 				counter++;
 				break;
@@ -75,6 +77,7 @@ int _printf(const char *format, ...)
 
 			{
 				int integer = va_arg(args, int);
+
 				putchar(integer);
 				counter++;
 				break;
