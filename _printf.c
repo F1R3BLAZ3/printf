@@ -23,66 +23,10 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-
+		void switch_statement(conts char *format);
 		if (*format == '%')
 		{
 			format++;
-
-			switch (*format)
-			{
-
-			case 'c':
-
-			{
-				char c = (char)va_arg(args, int);
-
-				putchar(c);
-				counter++;
-				break;
-			}
-
-			case 's':
-
-			{
-				char *str = va_arg(args, char *);
-
-				while (*str != '\0')
-				{
-					putchar(*str);
-					str++;
-					counter++;
-				}
-				break;
-			}
-
-			case '%':
-
-			{
-				putchar('%');
-				counter++;
-				break;
-			}
-
-			case 'd':
-
-			{
-				int decimal = va_arg(args, int);
-
-				putchar(decimal);
-				counter++;
-				break;
-			}
-
-			case 'i':
-
-			{
-				int integer = va_arg(args, int);
-
-				putchar(integer);
-				counter++;
-				break;
-			}
-			}
 		}
 		else
 		{
@@ -94,4 +38,58 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 	return (counter);
+}
+
+void switch_statement(conts char *format)
+{
+	switch (*format)
+	{
+	case 'c':
+
+	{
+		char c = (char)va_arg(args, int);
+
+		putchar(c);
+		counter++;
+		break;
+	}
+	case 's':
+
+	{
+		char *str = va_arg(args, char *);
+
+		while (*str != '\0')
+		{
+			putchar(*str);
+			str++;
+			counter++;
+		}
+		break;
+	}
+	case '%':
+
+	{
+		putchar('%');
+		counter++;
+		break;
+	}
+	case 'd':
+
+	{
+		int decimal = va_arg(args, int);
+
+		putchar(decimal);
+		counter++;
+		break;
+	}
+	case 'i':
+
+	{
+		int integer = va_arg(args, int);
+
+		putchar(integer);
+		counter++;
+		break;
+	}
+	}
 }
