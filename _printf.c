@@ -7,8 +7,8 @@
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
  *
- * Return - the number of characters printed
- *     (excluding the null byte used to end output to strings)
+ * Return: the number of characters printed
+ *         (excluding the null byte used to end output to strings)
  */
 
 int _printf(const char *format, ...)
@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 	return (counter);
 }
 
+/**
+ * switch_statement - Checks for conversion specifiers.
+ * @format: is a pointer to a character string.
+ *
+ * Return: Void.
+ */
 void switch_statement(conts char *format)
 {
 	switch (*format)
