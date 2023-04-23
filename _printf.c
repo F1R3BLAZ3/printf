@@ -60,8 +60,8 @@ int _printf(const char *format, ...)
 		{
 			putchar(*format);
 			counter++;
-			format++;
 		}
+		format++;
 	}
 
 	va_end(args);
