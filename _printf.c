@@ -54,6 +54,20 @@ int _printf(const char *format, ...)
 				counter++;
 				break;
 			}
+                        case 'd':
+                        {
+                                int decimal = va_arg(args, int);
+                                putchar(decimal);
+                                counter++;
+                                break;
+                        }
+                        case 'i':
+                        {
+                                int integer = va_arg(args, int);
+                                putchar(integer);
+                                counter++;
+                                break;
+                        }
 			}
 		}
 		else
