@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	counter = 0;
+
 	while (*format != '\0')
 	{
 
@@ -28,7 +29,9 @@ int _printf(const char *format, ...)
 
 			switch (*format)
 			{
+
 			case 'c':
+			
 			{
 				char c = (char)va_arg(args, int);
 				putchar(c);
@@ -54,6 +57,7 @@ int _printf(const char *format, ...)
 				counter++;
 				break;
 			}
+
                         case 'd':
                         {
                                 int decimal = va_arg(args, int);
@@ -61,6 +65,7 @@ int _printf(const char *format, ...)
                                 counter++;
                                 break;
                         }
+
                         case 'i':
                         {
                                 int integer = va_arg(args, int);
