@@ -65,20 +65,20 @@ int _printf(const char *format, ...)
 			case 'd':
 
 			{
-                                int decimal = va_arg(args, int);
-                                putchar(decimal);
-                                counter++;
-                                break;
-                        }
+				int decimal = va_arg(args, int);
+				putchar(decimal);
+				counter++;
+				break;
+			}
 
-                        case 'i':
+			case 'i':
 
-                        {
-                                int integer = va_arg(args, int);
-                                putchar(integer);
-                                counter++;
-                                break;
-                        }
+			{
+				int integer = va_arg(args, int);
+				putchar(integer);
+				counter++;
+				break;
+			}
 			}
 		}
 		else
