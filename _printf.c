@@ -23,10 +23,10 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		void switch_statement(const char *format, counter);
 		if (*format == '%')
 		{
 			format++;
+			void switch_statement(const char &format, int &counter, args);
 		}
 		if (format == '%')
 		{
@@ -47,10 +47,11 @@ int _printf(const char *format, ...)
 /**
  * switch_statement - Checks for conversion specifiers.
  * @format: is a pointer to a character string.
+ * @n: Is a placeholder for Counter.
  *
  * Return: Void.
  */
-void switch_statement(const char *format, n)
+void switch_statement(const char **format, int *counter, va_list args)
 {
 	int counter;
 
@@ -63,57 +64,50 @@ void switch_statement(const char *format, n)
 
 			case 'c':
 
-			{
-				char c = (char)va_arg(args, int);
-				putchar(c);
-				counter++;
-				break;
-			}
+	{
+		char c = (char)va_arg(args, int);
 
-			case 's':
-			{
-				char *str = va_arg(args, char *);
-				while (*str != '\0')
-				{
-					putchar(*str);
-					str++;
-					counter++;
-				}
-				break;
-			}
+		putchar(c);
+		counter++;
+		break;
+	}
+	case 's':
 
-			case '%':
-			{
-				putchar('%');
-				counter++;
-				break;
-			}
+	{
+		char *str = va_arg(args, char *);
 
-                        case 'd':
-                        {
-                                int decimal = va_arg(args, int);
-                                putchar(decimal);
-                                counter++;
-                                break;
-                        }
-
-                        case 'i':
-                        {
-                                int integer = va_arg(args, int);
-                                putchar(integer);
-                                counter++;
-                                break;
-                        }
-			}
-		}
-		else
+		while (*str != '\0')
 		{
-			putchar(*format);
+			putchar(*str);
+			str++;
 			counter++;
 		}
-		format++;
+		break;
 	}
+	case '%':
 
-	va_end(args);
-	return (counter);
+	{
+		putchar('%');
+		counter++;
+		break;
+	}
+	case 'd':
+
+	{
+		int decimal = va_arg(args, int);
+
+		putchar(decimal);
+		counter++;
+		break;
+	}
+	case 'i':
+
+	{
+		int integer = va_arg(args, int);
+
+		putchar(integer);
+		counter++;
+		break;
+	}
+	}
 }
