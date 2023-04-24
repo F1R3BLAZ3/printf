@@ -89,26 +89,6 @@ int _printf(const char *format, ...)
 			counter++;
 		}
 		format++;
-
-		if (*format == '\\')
-		{
-			switch (*format)
-			{
-			case 'n':
-
-			{
-				putchar('\n');
-				break;
-			}
-
-			case 't':
-
-			{
-				putchar('\t');
-				break;
-			}
-			}
-		}
 	}
 
 	va_end(args);
