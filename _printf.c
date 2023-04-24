@@ -77,7 +77,7 @@ int _printf(const char *format, ...)
 			{
 				putchar('%');
 				putchar(*format);
-				printed_chars += 2;
+				counter += 2;
 				break;
 			}
 			}
