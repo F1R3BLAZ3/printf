@@ -72,6 +72,7 @@ int _printf(const char *format, ...)
 
 			{
 				int integer = va_arg(args, int);
+
 				putchar(integer);
 				counter++;
 				break;
