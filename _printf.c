@@ -7,7 +7,7 @@
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
  *
- * Return - the number of characters printed
+ * Return: the number of characters printed
  *     (excluding the null byte used to end output to strings)
  */
 
