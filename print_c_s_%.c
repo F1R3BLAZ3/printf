@@ -41,3 +41,16 @@ int print_string(va_list args)
 
 	return (len);
 }
+
+/**
+ * print_percent - prints percent to stdout.
+ *  @args: A list of arguments containing % to print.
+ * Return: 1.
+ *
+*/
+
+int print_percent(void)
+{
+	putchar('%');
+	return (1);
+}
