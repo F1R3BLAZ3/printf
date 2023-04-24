@@ -6,9 +6,10 @@
 /**
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
+ * @...: A variable number of arguments to replace the directives in @format
  *
  * Return: the number of characters printed
- *     (excluding the null byte used to end output to strings)
+ *         (excluding the null byte used to end output to strings)
  */
 
 int _printf(const char *format, ...)
@@ -76,8 +77,8 @@ int _printf(const char *format, ...)
 
 			{
 				putchar('%');
-				putchar(*format);
-				counter += 2;
+				counter++;
+				format++;
 				break;
 			}
 			}
