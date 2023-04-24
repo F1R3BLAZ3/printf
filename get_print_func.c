@@ -15,6 +15,7 @@ int (*get_print_func(char type))(va_list)
 	print_func_t print_funcs[] = {
 	    {'c', print_char},
 	    {'s', print_string},
+	    {'%', print_percent},
 	    {0, NULL}};
 
 	int i = 0;
