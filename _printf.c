@@ -28,10 +28,10 @@ int _printf(const char *format, ...)
 		{
 			format++;
 		}
-                if (format == '%')
-                {
-                        return (-1);
-                }
+		if (format == '%')
+		{
+			return (-1);
+		}
 		else
 		{
 			putchar(*format);
@@ -52,11 +52,11 @@ int _printf(const char *format, ...)
  */
 void switch_statement(const char *format, n)
 {
-        int counter;
+	int counter;
 
-        va_list args;
+	va_list args;
 
-        counter = n;
+	counter = n;
 
 	switch (*format)
 	{
