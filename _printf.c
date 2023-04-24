@@ -71,6 +71,15 @@ int _printf(const char *format, ...)
 				counter++;
 				break;
 			}
+
+			default:
+
+			{
+				putchar('%');
+				putchar(*format);
+				printed_chars += 2;
+				break;
+			}
 			}
 		}
 		else
