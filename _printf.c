@@ -12,8 +12,7 @@
  *         (excluding the null byte used to end output to strings)
  */
 
-int _printf(const char *format, ...)
-{
+int _printf(const char *format, ...){
 	int counter;
 	va_list args;
 	int (*func)(va_list);
@@ -22,19 +21,15 @@ int _printf(const char *format, ...)
 
 	counter = 0;
 
-	if (*format == '\0')
-	{
+	if (*format == '\0'){
 		format--;
 		if (*format == '%')
 			return (-1);
 	}
 
-	while (*format)
-	{
-		if (*format == '%')
-		{
+	while (*format){
+		if (*format == '%'){
 			format++;
-
 			func = get_print_func(*format);
 
 			if (func != NULL){
@@ -55,7 +50,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(args);
 	return (counter);
 }
