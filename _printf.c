@@ -40,16 +40,28 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 			case 'c':
-				counter += putchar(va_arg(args, int));
+				putchar(va_arg(args, int));
+				counter++;
 				break;
 
 			case 's':
-				counter += puts(va_arg(args, char*));
-				break;
+			{
+				char *str = va_arg(args, char *);
+				if (str == NULL)
+					str = "(null)";
+				while (*str)
+				{
+                                        putchar(*str);
+                                        counter++;
+                                        str++;
+                                }
+                                break;
+			}
 
 			case '%':
-				counter += putchar('%');
-				break;
+                                putchar('%');
+                                counter++;
+                                break;
 
 			default:
 				counter += putchar('%');
@@ -59,7 +71,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			counter += putchar(*format);
+			putchar(*format);
+			counter++;
 		}
 		format++;
 	}
