@@ -7,8 +7,8 @@
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
  *
- * Return: the number of characters printed
- *         (excluding the null byte used to end output to strings)
+ * Return - the number of characters printed
+ *     (excluding the null byte used to end output to strings)
  */
 
 int _printf(const char *format, ...)
@@ -16,26 +16,59 @@ int _printf(const char *format, ...)
 	int counter;
 
 	va_list args;
-
 	va_start(args, format);
 
 	counter = 0;
-
-	if (*format == '\0')
-	{
-		format--;
-		if (*format == '%')
-		{
-			return (-1);
-		}
-	}
-
 	while (*format != '\0')
 	{
+
 		if (*format == '%')
 		{
 			format++;
-			void switch_statement(const char &format, int &counter, args);
+
+			switch (*format)
+			{
+			case 'c':
+			{
+				char c = (char)va_arg(args, int);
+				putchar(c);
+				counter++;
+				break;
+			}
+
+			case 's':
+			{
+				char *str = va_arg(args, char *);
+				while (*str != '\0')
+				{
+					putchar(*str);
+					str++;
+					counter++;
+				}
+				break;
+			}
+
+			case '%':
+			{
+				putchar('%');
+				counter++;
+				break;
+			}
+                        case 'd':
+                        {
+                                int decimal = va_arg(args, int);
+                                putchar(decimal);
+                                counter++;
+                                break;
+                        }
+                        case 'i':
+                        {
+                                int integer = va_arg(args, int);
+                                putchar(integer);
+                                counter++;
+                                break;
+                        }
+			}
 		}
 		else
 		{
@@ -47,71 +80,4 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 	return (counter);
-}
-
-/**
- * switch_statement - Checks for conversion specifiers.
- * @format: is a pointer to a character string.
- * @n: Is a placeholder for Counter.
- *
- * Return: Void.
- */
-void switch_statement(const char **format, int *counter, va_list args)
-{
-	int counter;
-
-	va_list args;
-
-	counter = n;
-
-	switch (*format)
-	{
-	case 'c':
-
-	{
-		char c = (char)va_arg(args, int);
-
-		putchar(c);
-		counter++;
-		break;
-	}
-	case 's':
-
-	{
-		char *str = va_arg(args, char *);
-
-		while (*str != '\0')
-		{
-			putchar(*str);
-			str++;
-			counter++;
-		}
-		break;
-	}
-	case '%':
-
-	{
-		putchar('%');
-		counter++;
-		break;
-	}
-	case 'd':
-
-	{
-		int decimal = va_arg(args, int);
-
-		putchar(decimal);
-		counter++;
-		break;
-	}
-	case 'i':
-
-	{
-		int integer = va_arg(args, int);
-
-		putchar(integer);
-		counter++;
-		break;
-	}
-	}
 }
