@@ -15,8 +15,8 @@
 int _printf(const char *format, ...)
 {
 	int counter;
-
 	va_list args;
+	int (*func)(va_list);
 
 	va_start(args, format);
 
@@ -35,19 +35,22 @@ int _printf(const char *format, ...)
 		{
 			format++;
 
-			int (*func)(va_list) = get_print_func(*format);
+			func = get_print_func(*format);
 
-			if (func != NULL)
+			if (func != NULL){
 				func(args);
 				counter++;
+			}
 			else
+			{
 				putchar('%');
 				putchar(*format);
 				counter++;
+			}
 		}
 		else
 			putchar(*format);
-			counter++;
+		counter++;
 		format++;
 	}
 
