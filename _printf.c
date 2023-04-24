@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 
 			{
 				char *str = va_arg(args, char *);
+
 				while (*str != '\0')
 				{
 					putchar(*str);
@@ -58,22 +59,22 @@ int _printf(const char *format, ...)
 				counter++;
 				break;
 			}
-                        case 'd':
+			case 'd':
 
-                        {
-                                int decimal = va_arg(args, int);
-                                putchar(decimal);
-                                counter++;
-                                break;
-                        }
-                        case 'i':
+			{
+				int decimal = va_arg(args, int);
+				putchar(decimal);
+				counter++;
+				break;
+			}
+			case 'i':
 
-                        {
-                                int integer = va_arg(args, int);
-                                putchar(integer);
-                                counter++;
-                                break;
-                        }
+			{
+				int integer = va_arg(args, int);
+				putchar(integer);
+				counter++;
+				break;
+			}
 			}
 		}
 		else
