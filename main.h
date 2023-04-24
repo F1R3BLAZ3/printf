@@ -2,6 +2,6 @@
 #define MAIN_H
 
 int _printf(const char *format, ...);
-void switch_statement(conts char *format);
+void switch_statement(const char *format);
 
 #endif

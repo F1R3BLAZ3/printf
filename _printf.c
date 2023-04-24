@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
  *
  * Return: Void.
  */
-void switch_statement(conts char *format)
+void switch_statement(const char *format)
 {
 	switch (*format)
 	{
