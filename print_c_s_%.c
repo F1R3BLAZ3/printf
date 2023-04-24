@@ -47,11 +47,11 @@ int print_string(va_list args)
  *  @args: A list of arguments containing % to print.
  * Return: 1.
  *
-*/
+ */
 
 int print_percent(va_list args)
 {
-        (void) args;
+	(void)args;
 	putchar('%');
 	return (1);
 }
