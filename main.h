@@ -1,7 +1,27 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int _printf(const char *format, ...);
-void switch_statement(const char *format);
+#include <stdarg.h>
 
-#endif
+/**
+ * struct print_func - Struct containing a char and a pointer to a function.
+ * @type: The character format specifier.
+ * @func: Pointer to a function that handles the corresponding format specifier
+ */
+typedef struct print_func
+{
+	char type;
+	int (*func)(va_list);
+} print_func_t;
+
+int _printf(const char *format, ...);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int print_int(va_list args);
+int print_decimal(va_list args);
+int print_unsigned_decimal(va_list args);
+int print_octal(va_list args);
+int print_hexidecimal(va_list args);
+
+#endif /* MAIN_H */
