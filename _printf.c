@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		void switch_statement(conts char *format);
+		void switch_statement(const char *format);
 		if (*format == '%')
 		{
 			format++;
@@ -48,6 +48,8 @@ int _printf(const char *format, ...)
  */
 void switch_statement(const char *format)
 {
+        va_list args;
+
 	switch (*format)
 	{
 	case 'c':
