@@ -63,45 +63,44 @@ int _printf(const char *format, ...)
 				}
 				break;
 			}
+
+			case '%':
+
+			{
+				putchar('%');
+				counter++;
+				break;
+			}
+			}
+		}
+		else
+		{
+			putchar(*format);
+			counter++;
+		}
+		format++;
+
+		if (*format == '\\')
+		{
+			switch (*format)
+			{
+			case 'n':
+
+			{
+				putchar('\n');
+				break;
 			}
 
-		case '%':
+			case 't':
 
-		{
-			putchar('%');
-			counter++;
-			break;
-		}
-		}
-	}
-	else
-	{
-		putchar(*format);
-		counter++;
-	}
-	format++;
-
-	if (*format == '\\')
-	{
-		switch (*format)
-		{
-		case 'n':
-
-		{
-			putchar('\n');
-			break;
-		}
-
-		case 't':
-
-		{
-			putchar('\t');
-			break;
-		}
+			{
+				putchar('\t');
+				break;
+			}
+			}
 		}
 	}
-}
 
-va_end(args);
-return (counter);
+	va_end(args);
+	return (counter);
 }
