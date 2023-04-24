@@ -33,41 +33,21 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
+
+			int (*func)(va_list) = get_print_func(*format);
+			if (func != NULL)
 			{
-			case 'c':
-				putchar(va_arg(args, int));
+				func(args);
 				counter++;
-				break;
-
-			case 's':
-			{
-				char *str = va_arg(args, char *);
-				if (str == NULL)
-					str = "(null)";
-				while (*str)
-				{
-                                        putchar(*str);
-                                        counter++;
-                                        str++;
-                                }
-                                break;
 			}
-
-			case '%':
-                                putchar('%');
-                                counter++;
-                                break;
-
-			default:
+			else
+			{
 				putchar('%');
 				putchar(*format);
-				counter += 2;
-				break;
+				counter++;
 			}
 		}
 		else
