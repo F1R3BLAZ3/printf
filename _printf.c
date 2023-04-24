@@ -47,6 +47,7 @@ int _printf(const char *format, ...)
 /**
  * switch_statement - Checks for conversion specifiers.
  * @format: is a pointer to a character string.
+ * @n: Is a placeholder for Counter.
  *
  * Return: Void.
  */
