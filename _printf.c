@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		void switch_statement(const char *format, counter);
+		void switch_statement(const char *format, ..., counter);
 		if (*format == '%')
 		{
 			format++;
@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
  *
  * Return: Void.
  */
-void switch_statement(const char *format, n)
+void switch_statement(const char *format, *n)
 {
 	int counter;
 
