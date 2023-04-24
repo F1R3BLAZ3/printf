@@ -104,12 +104,14 @@ int _printf(const char *format, ...)
 
 			{
 				putchar('\n');
+				break;
 			}
 
 			case 't':
 
 			{
 				putchar('\t');
+				break;
 			}
 			}
 		}
