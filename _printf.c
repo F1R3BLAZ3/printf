@@ -7,8 +7,8 @@
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
  *
- * Return - the number of characters printed
- *     (excluding the null byte used to end output to strings)
+ * Return: the number of characters printed
+ *         (excluding the null byte used to end output to strings)
  */
 
 int _printf(const char *format, ...)
@@ -16,21 +16,53 @@ int _printf(const char *format, ...)
 	int counter;
 
 	va_list args;
+
 	va_start(args, format);
 
 	counter = 0;
 
 	while (*format != '\0')
 	{
-
+		void switch_statement(const char *format, counter);
 		if (*format == '%')
 		{
 			format++;
+		}
+		if (format == '%')
+		{
+			return (-1);
+		}
+		else
+		{
+			putchar(*format);
+			counter++;
+		}
+		format++;
+	}
+
+	va_end(args);
+	return (counter);
+}
+
+/**
+ * switch_statement - Checks for conversion specifiers.
+ * @format: is a pointer to a character string.
+ *
+ * Return: Void.
+ */
+void switch_statement(const char *format, n)
+{
+	int counter;
+
+	va_list args;
+
+	counter = n;
 
 			switch (*format)
 			{
 
 			case 'c':
+
 			{
 				char c = (char)va_arg(args, int);
 				putchar(c);
