@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 			{
 			case 'c':
 			{
-				char c = (char)va_arg(args, int);
+				c = va_arg(args, int);
 
 				putchar(c);
 				counter++;
@@ -71,24 +71,6 @@ int _printf(const char *format, ...)
 
 			{
 				putchar('%');
-				counter++;
-				break;
-			}
-			case 'd':
-
-			{
-				int decimal = va_arg(args, int);
-
-				putchar(decimal);
-				counter++;
-				break;
-			}
-			case 'i':
-
-			{
-				int integer = va_arg(args, int);
-
-				putchar(integer);
 				counter++;
 				break;
 			}
