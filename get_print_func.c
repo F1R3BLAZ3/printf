@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 /**
- * get_print_func - Gets the appropriate print function for a given format specifier.
+ * get_print_func - Gets the appropriate print
+ *          function for a given format specifier.
  * @type: The format specifier character.
  *
- * Return: A pointer to the appropriate print function, or NULL if the specifier is invalid.
+ * Return: A pointer to the appropriate print function,
+ *           or NULL if the specifier is invalid.
  */
 
 int (*get_print_func(char type))(va_list)
