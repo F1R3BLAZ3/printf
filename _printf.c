@@ -30,9 +30,9 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	if (format == NULL)
+	if (*format == '\0')
 	{
-		return (0);
+		return (-1);
 	}
 
 	while (*format != '\0')
