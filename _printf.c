@@ -53,57 +53,55 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(args, char *);
 
-				while (*str != '\0')
+				if (str == NULL)
+					str = "(null)";
+				while (*str)
 				{
-					if (str == NULL)
-						str = "(null)";
-					while (*str)
-					{
-						putchar(*str);
-						counter++;
-						str++;
-					}
+					putchar(*str);
+					counter++;
+					str++;
 				}
 				break;
 			}
-
-			case '%':
-
-			{
-				putchar('%');
-				counter++;
-				break;
 			}
-			}
-		}
-		else
+
+		case '%':
+
 		{
-			putchar(*format);
+			putchar('%');
 			counter++;
+			break;
 		}
-		format++;
-
-		if (*format == '\\')
-		{
-			switch (*format)
-			{
-			case 'n':
-
-			{
-				putchar('\n');
-				break;
-			}
-
-			case 't':
-
-			{
-				putchar('\t');
-				break;
-			}
-			}
 		}
 	}
+	else
+	{
+		putchar(*format);
+		counter++;
+	}
+	format++;
 
-	va_end(args);
-	return (counter);
+	if (*format == '\\')
+	{
+		switch (*format)
+		{
+		case 'n':
+
+		{
+			putchar('\n');
+			break;
+		}
+
+		case 't':
+
+		{
+			putchar('\t');
+			break;
+		}
+		}
+	}
+}
+
+va_end(args);
+return (counter);
 }
