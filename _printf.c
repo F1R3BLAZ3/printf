@@ -31,62 +31,35 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	while (*format != '\0')
+	while (*format)
 	{
 
 		if (*format == '%')
 		{
 			format++;
-
 			switch (*format)
 			{
 			case 'c':
-			{
-				char c = va_arg(args, int);
-
-				putchar(c);
-				counter++;
+				counter += putchar(va_arg(args, int));
 				break;
-			}
 
 			case 's':
-
-			{
-				char *str = va_arg(args, char *);
-
-				if (str == NULL)
-					str = "(null)";
-				while (*str)
-				{
-					putchar(*str);
-					counter++;
-					str++;
-				}
+				counter += puts(va_arg(args, char*));
 				break;
-			}
 
 			case '%':
-
-			{
-				putchar('%');
-				counter++;
+				counter += putchar('%');
 				break;
-			}
 
 			default:
-
-			{
-				putchar('%');
-				putchar(*format);
-				counter += 2;
+				counter += putchar('%');
+				counter += putchar(*format);
 				break;
-			}
 			}
 		}
 		else
 		{
-			putchar(*format);
-			counter++;
+			counter += putchar(*format);
 		}
 		format++;
 	}
