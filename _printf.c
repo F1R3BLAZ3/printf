@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 			{
 			case 'c':
 			{
-				char c = (char)va_arg(args, int);
+				char c = va_arg(args, int);
 
 				putchar(c);
 				counter++;
