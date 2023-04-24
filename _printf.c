@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 			{
 
 			case 'c':
-			
 			{
 				char c = (char)va_arg(args, int);
 				putchar(c);
