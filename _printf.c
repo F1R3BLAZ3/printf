@@ -21,16 +21,21 @@ int _printf(const char *format, ...)
 
 	counter = 0;
 
+	if (*format == '\0')
+	{
+		format--;
+		if (*format == '%')
+		{
+			return (-1);
+		}
+	}
+
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
 			void switch_statement(const char &format, int &counter, args);
-		}
-		if (format == '%')
-		{
-			return (-1);
 		}
 		else
 		{
