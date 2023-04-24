@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (NULL);
+		return (0);
 	}
 
 	while (*format != '\0')
