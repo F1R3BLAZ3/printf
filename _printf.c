@@ -60,9 +60,9 @@ int _printf(const char *format, ...)
 
 				while (*str != '\0')
 				{
-					if (s == NULL)
-						s = "(null)";
-					While(*str)
+					if (str == NULL)
+						str = "(null)";
+					while (*str)
 					{
 						putchar(*str);
 						counter++;
