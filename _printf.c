@@ -49,8 +49,10 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
+		{
 			putchar(*format);
-		counter++;
+			counter++;
+		}
 		format++;
 	}
 
