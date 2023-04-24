@@ -59,10 +59,9 @@ void switch_statement(const char **format, int *counter, va_list args)
 
 	counter = n;
 
-			switch (*format)
-			{
-
-			case 'c':
+	switch (*format)
+	{
+	case 'c':
 
 	{
 		char c = (char)va_arg(args, int);
