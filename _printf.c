@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 
 			{
 				int decimal = va_arg(args, int);
+
 				putchar(decimal);
 				counter++;
 				break;
