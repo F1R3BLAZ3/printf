@@ -10,7 +10,7 @@
  */
 typedef struct print_func
 {
-	char type;
+	char *type;
 	int (*func)(va_list);
 } print_func_t;
 
@@ -23,6 +23,6 @@ int print_decimal(va_list args);
 int print_unsigned_decimal(va_list args);
 int print_octal(va_list args);
 int print_hexidecimal(va_list args);
-int (*get_print_func(char type))(va_list);
+int (*get_print_func(char *type))(va_list);
 
 #endif /* MAIN_H */
