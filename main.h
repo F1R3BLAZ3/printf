@@ -22,7 +22,7 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
-int print_decimal(va_list args);
+int print_dec(va_list args);
 int print_unsigned_decimal(va_list args);
 int print_octal(va_list args);
 int print_hexidecimal(va_list args);
