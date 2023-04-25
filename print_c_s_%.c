@@ -11,7 +11,7 @@
 
 int print_char(va_list args)
 {
-	int len = 0;
+	int len;
 	char c = va_arg(args, int);
 
 	putchar(c);
@@ -53,7 +53,7 @@ int print_string(va_list args)
 
 int print_percent(va_list args)
 {
-	int len = 0;
+	int len;
 
 	(void)args;
 	putchar('%');
