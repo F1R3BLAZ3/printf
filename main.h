@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct print_func - Struct containing a char and a pointer to a function.
@@ -15,6 +16,7 @@ typedef struct print_func
 	int (*func)(va_list);
 } print_func_t;
 
+
 int _printf(const char *format, ...);
 int print_char(va_list args);
 int print_string(va_list args);
@@ -24,6 +26,5 @@ int print_decimal(va_list args);
 int print_unsigned_decimal(va_list args);
 int print_octal(va_list args);
 int print_hexidecimal(va_list args);
-int (*get_print_func(const char *type))(va_list);
 
 #endif /* MAIN_H */

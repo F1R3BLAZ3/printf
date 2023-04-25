@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 	    {"c", print_char},
 	    {"s", print_string},
 	    {"%", print_percent},
-	    {NULL, NULL}};
+	    {NULL, NULL}
+	};
 
 	va_list args;
 	int i, j, counter = 0;
