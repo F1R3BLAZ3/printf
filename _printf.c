@@ -41,14 +41,13 @@ int _printf(const char *format, ...)
 
 			if (func != NULL)
 			{
-				func(args);
-				counter++;
+                                counter += func(args);
 			}
 			else
 			{
 				putchar('%');
 				putchar(*format);
-				counter++;
+				counter += 2;
 			}
 		}
 		else
