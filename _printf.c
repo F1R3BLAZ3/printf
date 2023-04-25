@@ -64,8 +64,11 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			func = get_print_func(format);
-			if (func == NULL || func == (void *)-1)
+			if (func == NULL || func == (int (*)(va_list *)) - 1)
+			{
+				va_end(args);
 				return (-1);
+			}
 			func(args);
 			counter++;
 		}
