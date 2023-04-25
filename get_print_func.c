@@ -16,7 +16,8 @@ int (*get_print_func(const char *type))(va_list)
 	    print_char,
 	    print_string,
 	    print_percent,
-	    NULL};
+	    NULL
+	};
 	char types[] = {'c', 's', '%', '\0'};
 
 	int i = 0;
@@ -26,5 +27,5 @@ int (*get_print_func(const char *type))(va_list)
 			return print_funcs[i];
 		i++;
 	}
-	return ((int (*)(va_list *)) - 1);
+	return (-1);
 }
