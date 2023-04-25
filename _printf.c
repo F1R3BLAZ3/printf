@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
 /**
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
@@ -46,7 +45,10 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (!print_funcs[j].type)
+			{
+				counter += write(1, "%", 1);
 				counter += write(1, &format[i], 1);
+			}
 		}
 		else
 			counter += write(1, &format[i], 1);
