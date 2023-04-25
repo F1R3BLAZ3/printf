@@ -17,12 +17,12 @@ int _printf(const char *format, ...)
 	int counter;
 	va_list args;
 	int (*func)(va_list);
-
 	va_start(args, format);
 
 	counter = 0;
 
-	if (*format == '\0'){
+	if (*format == '\0')
+	{
 		format--;
 		if (*format == '%')
 			return (-1);
@@ -38,17 +38,20 @@ int _printf(const char *format, ...)
 			if (func == NULL)
 				return (-1);
 
-			if (func != NULL){
+			if (func != NULL)
+			{
 				func(args);
 				counter++;
 			}
-			else{
+			else
+			{
 				putchar('%');
 				putchar(*format);
 				counter++;
 			}
 		}
-		else{
+		else
+		{
 			putchar(*format);
 			counter++;
 		}
