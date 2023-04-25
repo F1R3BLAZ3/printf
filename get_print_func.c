@@ -16,7 +16,7 @@ int (*get_print_func(char type))(va_list)
 	    {'c', print_char},
 	    {'s', print_string},
 	    {'%', print_percent},
-	    {0, NULL}};
+	    {NULL, NULL}};
 
 	int i = 0;
 
