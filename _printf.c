@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			func = get_print_func(*format);
+			func = get_print_func(format);
 
 			if (func == NULL)
 				return (-1);
