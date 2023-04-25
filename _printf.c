@@ -23,14 +23,17 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (*format == '\0')
+	/* if (*format == '\0')
 	{
 		format--;
 		if (*format == '%')
 			return (-1);
 		else
 			return (0);
-	}
+	} */
+
+	if (*format == '%' && (*format + 1) == '\0')
+		return (-1);
 
 	while (*format)
 	{
