@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && (*format + 1) != '\0')
 		{
 			format++;
 			func = get_print_func(format);
@@ -45,14 +45,14 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				putchar('%');
-				putchar(*format);
+				_write('%');
+				_write(*format);
 				counter += 2;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_write(*format);
 			counter++;
 		}
 		format++;
