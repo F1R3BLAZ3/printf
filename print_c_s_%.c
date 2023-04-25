@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * print_char - Prints a char to stdout.
@@ -11,12 +13,8 @@
 
 int print_char(va_list args)
 {
-	int len = 0;
 	char c = va_arg(args, int);
-
-	putchar(c);
-	len++;
-	return (len);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -29,25 +27,16 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int len = 0;
 
 	if (str == NULL)
 		str = "(null)";
 
 	if (*str == '\0')
 	{
-		putchar('\0');
-		return (0);
+		return (write(0, '\0', 0));
 	}
 
-	while (*str)
-	{
-		putchar(*str);
-		len++;
-		str++;
-	}
-
-	return (len);
+	return (write(1, str, strlen(str)));
 }
 
 /**
@@ -59,10 +48,6 @@ int print_string(va_list args)
 
 int print_percent(va_list args)
 {
-	int len = 0;
-
 	(void)args;
-	putchar('%');
-	len++;
-	return (len);
+	return (write(1, "%", 1));
 }
