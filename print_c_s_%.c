@@ -30,7 +30,7 @@ int print_string(va_list args)
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
-		str = "(null)";
+		return (write(1, "(null)", 6));
 
 	if (*str == '\0')
 	{
