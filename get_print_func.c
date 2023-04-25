@@ -12,7 +12,7 @@
 
 int (*get_print_func(const char type))(va_list *)
 {
-	int (*print_funcs[])(va_list) = {
+	int (*print_funcs[])(va_list *) = {
 	    print_char,
 	    print_string,
 	    print_percent,
