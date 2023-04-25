@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			return (-1);
 	}
 
-	/*while (*format)
+	while (*format)
 	{
 		if (*format == '%')
 		{
@@ -48,26 +48,6 @@ int _printf(const char *format, ...)
 				putchar(*format);
 				counter++;
 			}
-		}
-		else
-		{
-			putchar(*format);
-			counter++;
-		}
-		format++;
-	}
-	va_end(args);
-	return (counter);*/
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			func = get_print_func(format);
-			if (func == NULL || func == (void *)-1)
-				return (-1);
-			func(args);
-			counter++;
 		}
 		else
 		{
