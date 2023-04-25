@@ -18,6 +18,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int (*func)(va_list);
 
+	if (!format)
+		return (-1);
+
 	va_start(args, format);
 
 	if (*format == '\0')
@@ -28,9 +31,6 @@ int _printf(const char *format, ...)
 		else
 			return (0);
 	}
-
-	if (!format)
-		return (-1);
 
 	while (*format)
 	{
