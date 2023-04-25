@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 {
 	print_func_t print_funcs[] = {
 	    {"c", print_char}, {"s", print_string}, {"%", print_percent},
-	    {"d", print_int}, {"i", print_int}, {NULL, NULL}
+	    {"d", print_int}, {"i", print_int}, {"b", print_bin}, {NULL, NULL}
 	};
 
 	va_list args;
