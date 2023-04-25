@@ -34,12 +34,6 @@ int print_string(va_list args)
 	if (str == NULL)
 		str = "(null)";
 
-	if (*str == '\0')
-	{
-		putchar('\0');
-		return 0;
-	}
-
 	while (*str)
 	{
 		putchar(*str);
