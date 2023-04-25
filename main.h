@@ -23,6 +23,6 @@ int print_decimal(va_list args);
 int print_unsigned_decimal(va_list args);
 int print_octal(va_list args);
 int print_hexidecimal(va_list args);
-int (*get_print_func(char *type))(va_list);
+int (*get_print_func(const char *type))(va_list);
 
 #endif /* MAIN_H */
