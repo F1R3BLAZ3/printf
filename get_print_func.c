@@ -22,7 +22,7 @@ int (*get_print_func(const char type))(va_list *)
 	int i = 0;
 	while (types[i] != '\0')
 	{
-		if (types[i] == type)
+		if (types[i] == *type)
 			return print_funcs[i];
 		i++;
 	}
