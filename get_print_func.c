@@ -10,7 +10,7 @@
  *           or NULL if the specifier is invalid.
  */
 
-int (*get_print_func(char *type))(va_list)
+int (*get_print_func(char type))(va_list)
 {
 	print_func_t print_funcs[] = {
 	    {'c', print_char},
