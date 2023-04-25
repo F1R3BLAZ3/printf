@@ -50,8 +50,6 @@ int _printf(const char *format, ...)
 				counter += 2;
 			}
 		}
-                if (*format == '\n')
-                        counter++;
 		else
 		{
 			putchar(*format);
