@@ -11,12 +11,12 @@
 
 int print_char(va_list args)
 {
-        int len = 0;
-        char c = va_arg(args, int);
+	int len = 0;
+	char c = va_arg(args, int);
 
-        putchar(c);
-        len++;
-        return (len);
+	putchar(c);
+	len++;
+	return (len);
 }
 
 /**
@@ -28,20 +28,20 @@ int print_char(va_list args)
 
 int print_string(va_list args)
 {
-        char *str = va_arg(args, char *);
-        int len = 0;
+	char *str = va_arg(args, char *);
+	int len = 0;
 
-        if (str == NULL)
-                str = "(null)";
+	if (str == NULL)
+		str = "(null)";
 
-        while (*str)
-        {
-                putchar(*str);
-                len++;
-                str++;
-        }
+	while (*str)
+	{
+		putchar(*str);
+		len++;
+		str++;
+	}
 
-        return (len);
+	return (len);
 }
 
 /**
@@ -53,10 +53,10 @@ int print_string(va_list args)
 
 int print_percent(va_list args)
 {
-        int len = 0;
+	int len = 0;
 
-        (void)args;
-        putchar('%');
-        len++;
-        return (len);
+	(void)args;
+	putchar('%');
+	len++;
+	return (len);
 }
