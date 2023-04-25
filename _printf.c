@@ -37,11 +37,11 @@ int _printf(const char *format, ...)
 			if (func == NULL)
 				return (-1);
 
-			if (func != NULL || func == (void *)-1)
-				return (-1);
-			func(args);
-			counter++;
-
+			if (func != NULL)
+			{
+				func(args);
+				counter++;
+			}
 			else
 			{
 				putchar('%');

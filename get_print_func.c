@@ -27,5 +27,5 @@ int (*get_print_func(const char *type))(va_list)
 			return print_funcs[i];
 		i++;
 	}
-	return (-1);
+	return (NULL);
 }
