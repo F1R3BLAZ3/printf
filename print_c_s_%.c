@@ -34,7 +34,7 @@ int print_string(va_list args)
 
 	if (*str == '\0')
 	{
-		return (write(0, '\0', 0));
+		return (0);
 	}
 
 	return (write(1, str, strlen(str)));
