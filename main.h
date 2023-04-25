@@ -26,5 +26,7 @@ int print_dec(va_list args);
 int print_unsigned_decimal(va_list args);
 int print_octal(va_list args);
 int print_hexidecimal(va_list args);
+int print_number(unsigned int n, int base);
+int write_string_rev(char *str);
 
 #endif /* MAIN_H */
