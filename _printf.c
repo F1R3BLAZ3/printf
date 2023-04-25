@@ -29,9 +29,6 @@ int _printf(const char *format, ...)
                         return (0);
 	}
 
-        if (*format == '\n')
-                counter++;
-
 	while (*format)
 	{
 		if (*format == '%')
@@ -53,6 +50,8 @@ int _printf(const char *format, ...)
 				counter += 2;
 			}
 		}
+                if (*format == '\n')
+                        counter++;
 		else
 		{
 			putchar(*format);
