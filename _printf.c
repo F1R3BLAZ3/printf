@@ -46,8 +46,9 @@ int _printf(const char *format, ...)
 			}
 			if (!print_funcs[j].type)
 			{
-				counter += write(1, "%", 1);
 				counter += write(1, &format[i], 1);
+				counter++;
+				i++;
 			}
 		}
 		else
