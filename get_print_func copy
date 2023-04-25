@@ -12,20 +12,21 @@
 
 int (*get_print_func(const char *type))(va_list)
 {
-	int (*print_funcs[])(va_list) = {
-	    print_char,
-	    print_string,
-	    print_percent,
-	    NULL
-	};
-	char types[] = {'c', 's', '%', '\0'};
+	print_func_t print_funcs[] = {
+	    {'c', (void *)print_char},
+	    {'s', (void *)print_string},
+	    {'%', (void *)print_percent},
+	    {0, NULL}};
 
 	int i = 0;
-	while (types[i] != '\0')
+
+	while (print_funcs[i].type != 0)
 	{
-		if (types[i] == *type)
-			return print_funcs[i];
+		if (print_funcs[i].type == type)
+			return (print_funcs[i].func);
+
 		i++;
 	}
+
 	return (NULL);
 }
