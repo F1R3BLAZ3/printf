@@ -13,9 +13,9 @@
 int (*get_print_func(const char *type))(va_list)
 {
 	print_func_t print_funcs[] = {
-	    {'c', print_char},
-	    {'s', print_string},
-	    {'%', print_percent},
+	    {'c', (void *)print_char},
+	    {'s', (void *)print_string},
+	    {'%', (void *)print_percent},
 	    {0, NULL}};
 
 	int i = 0;
