@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%' && (*format + 1) != NULL)
+		if (*format == '%' && (*format + 1) != '\0')
 		{
 			format++;
 			func = get_print_func(format);
