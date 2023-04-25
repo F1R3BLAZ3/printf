@@ -10,7 +10,7 @@
  *           or NULL if the specifier is invalid.
  */
 
-int (*get_print_func(const char type))(va_list *)
+int (*get_print_func(const char *type))(va_list)
 {
 	int (*print_funcs[])(va_list) = {
 	    print_char,
