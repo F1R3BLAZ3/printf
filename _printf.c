@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 		format--;
 		if (*format == '%')
 			return (-1);
+                else
+                        return (0);
 	}
 
 	while (*format)
