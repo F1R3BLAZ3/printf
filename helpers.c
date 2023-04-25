@@ -14,32 +14,32 @@
 
 int print_number(unsigned int n, int base)
 {
-    char buffer[1024];
-    char *ptr = buffer;
-    int len = 0;
+	char buffer[1024];
+	char *ptr = buffer;
+	int len = 0;
 
-    if (n == 0)
-    {
-        len += write(1, "0", 1);
-        return (len);
-    }
+	if (n == 0)
+	{
+		len += write(1, "0", 1);
+		return (len);
+	}
 
-    while (n != 0)
-    {
-        int rem = n % base;
+	while (n != 0)
+	{
+		int rem = n % base;
 
-        if (rem < 10)
-            *ptr++ = rem + '0';
-        else
-            *ptr++ = rem - 10 + 'a';
+		if (rem < 10)
+			*ptr++ = rem + '0';
+		else
+			*ptr++ = rem - 10 + 'a';
 
-        n /= base;
-    }
+		n /= base;
+	}
 
-    *ptr = '\0';
-    len += write_string_rev(buffer);
+	*ptr = '\0';
+	len += write_string_rev(buffer);
 
-    return (len);
+	return (len);
 }
 
 /**
@@ -51,14 +51,14 @@ int print_number(unsigned int n, int base)
 
 int write_string_rev(char *str)
 {
-    int len = 0;
-    char *end = str + strlen(str) - 1;
+	int len = 0;
+	char *end = str + strlen(str) - 1;
 
-    while (end >= str)
-    {
-        len += write(1, end, 1);
-        end--;
-    }
+	while (end >= str)
+	{
+		len += write(1, end, 1);
+		end--;
+	}
 
-    return (len);
+	return (len);
 }
