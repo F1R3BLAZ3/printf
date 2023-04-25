@@ -10,18 +10,19 @@
  *
  * Return: the number of characters printed
  */
+
 int print_int(va_list args)
 {
-    int n = va_arg(args, int);
-    int len = 0;
+	int n = va_arg(args, int);
+	int len = 0;
 
-    if (n < 0)
-    {
-        len += write(1, "-", 1);
-        n = -n;
-    }
+	if (n < 0)
+	{
+		len += write(1, "-", 1);
+		n = -n;
+	}
 
-    len += print_number(n, 10);
+	len += print_number(n, 10);
 
-    return (len);
+	return (len);
 }
