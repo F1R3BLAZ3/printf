@@ -9,13 +9,13 @@
  * @args: a va_list of arguments.
  *
  * Return: the number of characters printed.
-*/
+ */
 
 int print_custom_S(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int len = 0;
-	int i = 0;
+	int i, len = 0;
+	int cast;
 
 	if (str == NULL)
 		str = "(null)";
@@ -26,6 +26,11 @@ int print_custom_S(va_list args)
 		{
 			len += write(1, "\\x", 2);
 			len += print_hex_number((unsigned int)str[i], "0123456789ABCDEF");
+			cast = str[i];
+			if (cast < 16)
+			{
+				len += write(1, "0", 1);
+			}
 		}
 		else
 		{
