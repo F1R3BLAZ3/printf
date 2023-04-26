@@ -5,10 +5,10 @@
 #include <unistd.h>
 
 /**
- * print_int - prints an integer
- * @args: a va_list of arguments
+ * print_int - Prints an integer
+ * @args: A va_list of arguments
  *
- * Return: the number of characters printed
+ * Return: The number of characters printed
  */
 
 int print_int(va_list args)
