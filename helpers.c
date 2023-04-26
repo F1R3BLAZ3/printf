@@ -62,3 +62,38 @@ int write_string_rev(char *str)
 
 	return (len);
 }
+
+/**
+ * print_hex_number - prints a hexadecimal number
+ * @n: unsigned int to be printed
+ * @base: base to be used for conversion (hex lowercase or uppercase)
+ *
+ * Return: the number of characters printed
+ */
+
+int print_hex_number(unsigned int n, char *base)
+{
+	char buffer[1024];
+	char *ptr = buffer;
+	int len = 0;
+
+	if (n == 0)
+	{
+		len += write(1, "0", 1);
+		return (len);
+	}
+
+	while (n != 0)
+	{
+		int rem = n % 16;
+
+		*ptr++ = base[rem];
+
+		n /= 16;
+	}
+
+	*ptr = '\0';
+	len += write_string_rev(buffer);
+
+	return (len);
+}
