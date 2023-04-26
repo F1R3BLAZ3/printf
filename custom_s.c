@@ -25,12 +25,12 @@ int print_custom_S(va_list args)
 		if (str[i] < 32 || str[i] >= 127)
 		{
 			len += write(1, "\\x", 2);
-			len += print_hex_number((unsigned int)str[i], "0123456789ABCDEF");
 			cast = str[i];
 			if (cast < 16)
 			{
 				len += write(1, "0", 1);
 			}
+			len += print_hex_number((unsigned int)str[i], "0123456789ABCDEF");
 		}
 		else
 		{
