@@ -6,7 +6,7 @@
 
 /**
  * print_custom_S - Prints customised string.
- * @args: a va_list of arguments.
+ * @args: A va_list of arguments.
  *
  * Return: the number of characters printed.
  */
