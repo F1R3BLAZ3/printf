@@ -8,7 +8,7 @@
  * print_custom_S - Prints customised string.
  * @args: A va_list of arguments.
  *
- * Return: the number of characters printed.
+ * Return: The number of characters printed.
  */
 
 int print_custom_S(va_list args)
