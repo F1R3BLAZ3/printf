@@ -14,6 +14,7 @@
 int print_unsigned_dec(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
+
 	return (print_number(n, 10));
 }
 
@@ -27,6 +28,7 @@ int print_unsigned_dec(va_list args)
 int print_oct(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int);
+
 	return (print_number(n, 8));
 }
 
@@ -39,8 +41,9 @@ int print_oct(va_list args)
 
 int print_hex(va_list args)
 {
-    unsigned int n = va_arg(args, unsigned int);
-    return (print_hex_number(n, "0123456789abcdef"));
+	unsigned int n = va_arg(args, unsigned int);
+
+	return (print_hex_number(n, "0123456789abcdef"));
 }
 
 /**
@@ -52,6 +55,7 @@ int print_hex(va_list args)
 
 int print_HEX(va_list args)
 {
-    unsigned int n = va_arg(args, unsigned int);
-    return (print_hex_number(n, "0123456789ABCDEF"));
+	unsigned int n = va_arg(args, unsigned int);
+
+	return (print_hex_number(n, "0123456789ABCDEF"));
 }
