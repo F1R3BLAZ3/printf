@@ -64,11 +64,11 @@ int write_string_rev(char *str)
 }
 
 /**
- * print_hex_number - Prints a hexadecimal number
- * @n: Unsigned int to be printed
- * @base: Base to be used for conversion (hex lowercase or uppercase)
+ * print_hex_number - Prints a hexadecimal number.
+ * @n: Unsigned int to be printed.
+ * @base: Base to be used for conversion (hex lowercase or uppercase).
  *
- * Return: the number of characters printed
+ * Return: The number of characters printed.
  */
 
 int print_hex_number(unsigned int n, char *base)

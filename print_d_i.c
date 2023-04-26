@@ -6,9 +6,9 @@
 
 /**
  * print_int - Prints an integer.
- * @args: A va_list of arguments
+ * @args: A va_list of arguments.
  *
- * Return: The number of characters printed
+ * Return: The number of characters printed.
  */
 
 int print_int(va_list args)

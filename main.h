@@ -8,7 +8,7 @@
 /**
  * struct print_func - Struct containing a char and a pointer to a function.
  * @type: The character format specifier.
- * @func: Pointer to a function that handles the corresponding format specifier
+ * @func: Pointer to a function that handles the corresponding format specifier.
  */
 typedef struct print_func
 {

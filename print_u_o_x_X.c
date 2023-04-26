@@ -8,7 +8,7 @@
  * print_unsigned_dec - prints an unsigned decimal.
  * @args: a va_list of arguments.
  *
- * Return: the number of characters printed
+ * Return: the number of characters printed.
  */
 
 int print_unsigned_dec(va_list args)

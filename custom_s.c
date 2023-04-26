@@ -5,10 +5,10 @@
 #include <unistd.h>
 
 /**
- * print_custom_S - Prints customised string.
- * @args: A va_list of arguments.
+ * print_custom_S - prints customised string.
+ * @args: a va_list of arguments.
  *
- * Return: The number of characters printed.
+ * Return: the number of characters printed.
  */
 
 int print_custom_S(va_list args)
