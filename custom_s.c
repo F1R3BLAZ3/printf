@@ -20,7 +20,7 @@ int print_custom_S(va_list args)
 	if (str == NULL)
 		str = "(null)";
 
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
