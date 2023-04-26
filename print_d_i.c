@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 /**
- * print_int - Prints an integer
+ * print_int - Prints an integer.
  * @args: A va_list of arguments
  *
  * Return: The number of characters printed
