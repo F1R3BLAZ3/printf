@@ -16,7 +16,6 @@ typedef struct print_func
 	int (*func)(va_list);
 } print_func_t;
 
-
 int _printf(const char *format, ...);
 int print_char(va_list args);
 int print_string(va_list args);
@@ -31,5 +30,6 @@ int print_number(unsigned int n, int base);
 int write_string_rev(char *str);
 int print_bin(va_list args);
 int print_hex_number(unsigned int n, char *base);
+int print_custom_S(va_list args);
 
 #endif /* MAIN_H */
