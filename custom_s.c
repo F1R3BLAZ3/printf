@@ -28,7 +28,9 @@ int print_custom_S(va_list args)
 			len += print_hex_number((unsigned int)str[i], "0123456789ABCDEF");
 		}
 		else
+		{
 			len += write(1, &str[i], 1);
+		}
 		i++;
 	}
 	return (len);
