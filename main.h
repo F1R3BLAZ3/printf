@@ -30,5 +30,6 @@ int print_HEX(va_list args);
 int print_number(unsigned int n, int base);
 int write_string_rev(char *str);
 int print_bin(va_list args);
+int print_hex_number(unsigned int n, char *base);
 
 #endif /* MAIN_H */
