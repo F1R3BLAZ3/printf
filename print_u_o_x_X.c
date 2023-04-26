@@ -50,7 +50,7 @@ int print_hex(va_list args)
  * Return: the number of characters printed
  */
 
-int print_hex_upper(va_list args)
+int print_HEX(va_list args)
 {
     unsigned int n = va_arg(args, unsigned int);
     return (print_hex_number(n, "0123456789ABCDEF"));
