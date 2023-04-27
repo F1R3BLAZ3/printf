@@ -14,5 +14,8 @@
 
 int print_pointer(va_list args)
 {
-	
+	void *p;
+
+        p = va_arg(args, void*);
+        
 }
