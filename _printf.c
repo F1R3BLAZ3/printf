@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
 /**
  * _printf - Produces output according to a format.
  * @format: is a pointer to a character string.
@@ -20,7 +21,8 @@ int _printf(const char *format, ...)
 	    {"d", print_int}, {"i", print_int}, {"b", print_bin},
 	    {"u", print_unsigned_dec}, {"o", print_oct}, {"x", print_hex},
 	    {"X", print_HEX}, {"S", print_custom_S}, {"S", print_custom_S},
-	    {NULL, NULL}};
+            {NULL, NULL}
+	};
 
 	va_list args;
 	int i, j, counter = 0;
@@ -29,7 +31,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (*format == '%' && (*format + 1) == '\0')
 		return (-1);
-	va_start(args, format);
+        va_start(args, format);
 
 	for (i = 0; format[i]; i++)
 	{
