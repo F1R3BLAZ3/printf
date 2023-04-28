@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	    {"c", print_char}, {"s", print_string}, {"%", print_percent},
 	    {"d", print_int}, {"i", print_int}, {"b", print_bin},
 	    {"u", print_unsigned_dec}, {"o", print_oct}, {"x", print_hex},
-	    {"X", print_HEX}, {"S", print_custom_S}, {"p", print_pointer},
+	    {"X", print_HEX}, {"S", print_custom_S}, {"S", print_custom_S},
 	    {NULL, NULL}};
 
 	va_list args;
