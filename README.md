@@ -1,3 +1,6 @@
+![image](https://github.com/F1R3BLAZ3/printf/assets/125498452/3379b9ca-f298-4aa2-923b-ea70cb96c454)
+
+
 # AirBnB clone - The console
 
 The goal of the project is to deploy on a server a simple copy of the AirBnB website.
